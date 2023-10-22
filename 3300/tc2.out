@@ -1,0 +1,32 @@
+instruction trace:
+at 00, br    5
+at 18, br    3fffffa (= decimal -6)
+at 04, adds  ffff,r0,r1
+at 08, bc    4
+at 1c, adds  1,r0,r2
+at 20, bnc   3fffffb (= decimal -5)
+at 10, bnc   5
+at 28, bte   r1,r1,1
+at 30, btne  r1,r1,1
+at 34, adds  r0,r0,r0
+at 38, btei  1f,r1,1
+at 3c, adds  r0,r0,r0
+at 40, btnei 1,r1,1
+at 48, btei  1,r2,fff6 (= decimal -10)
+at 24, halt
+  r0: 00000000  r8: 00000000  r10: 00000000  r18: 00000000
+  r1: ffffffff  r9: 00000000  r11: 00000000  r19: 00000000
+  r2: 00000001  ra: 00000000  r12: 00000000  r1a: 00000000
+  r3: 00000000  rb: 00000000  r13: 00000000  r1b: 00000000
+  r4: 00000000  rc: 00000000  r14: 00000000  r1c: 00000000
+  r5: 00000000  rd: 00000000  r15: 00000000  r1d: 00000000
+  r6: 00000000  re: 00000000  r16: 00000000  r1e: 00000000
+  r7: 00000000  rf: 00000000  r17: 00000000  r1f: 00000000
+  cc: 0
+
+execution statistics (in decimal):
+  instruction fetches = 15
+  data words read     = 0
+  data words written  = 0
+  branches executed   = 10
+  branches taken      = 8 (80.0%)

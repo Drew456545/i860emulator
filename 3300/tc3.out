@@ -1,0 +1,35 @@
+instruction trace:
+at 00, br    5
+at 18, ld.l  5(r0),r1
+  read access at address 4
+at 1c, ld.l  5(r1),r2
+  read access at address 14
+at 20, ld.l  fff9(r1),r3
+  read access at address 8
+at 24, ld.l  r3(r1),r4
+  read access at address c
+at 28, st.l  r4,1(r1)
+  write access at address 10
+at 2c, st.l  r1,5(r1)
+  write access at address 14
+at 30, ld.l  1(r1),r5
+  read access at address 10
+at 34, ld.l  5(r1),r6
+  read access at address 14
+at 38, halt
+  r0: 00000000  r8: 00000000  r10: 00000000  r18: 00000000
+  r1: 00000010  r9: 00000000  r11: 00000000  r19: 00000000
+  r2: 00000018  ra: 00000000  r12: 00000000  r1a: 00000000
+  r3: fffffffc  rb: 00000000  r13: 00000000  r1b: 00000000
+  r4: 00abcdef  rc: 00000000  r14: 00000000  r1c: 00000000
+  r5: 00abcdef  rd: 00000000  r15: 00000000  r1d: 00000000
+  r6: 00000010  re: 00000000  r16: 00000000  r1e: 00000000
+  r7: 00000000  rf: 00000000  r17: 00000000  r1f: 00000000
+  cc: 0
+
+execution statistics (in decimal):
+  instruction fetches = 10
+  data words read     = 6
+  data words written  = 2
+  branches executed   = 1
+  branches taken      = 1 (100.0%)
